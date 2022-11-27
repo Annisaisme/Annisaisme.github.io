@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="uts.css">
+    <script src="https://kit.fontawesome.com/a1f5576d7f.js" crossorigin="anonymous"></script>
+    <title>Annisa Login</title>
+</head>
+<body bgcolor="#1f1f1f">
+    <div id="toggle">
+        <!-- kita buat class indicator -->
+        <i class="indicator"></i>
+    </div>
+
+    <script>
+        // kita panggil element body dan toggle 
+        const body = document.querySelector('body');
+        const toggle = document.getElementById("toggle");
+
+        // ketika toggle kita klik maka dia akan menambahkan class yang bernama active
+        // yang mana active itu akan kita gunakan di dalam css 
+        toggle.onclick = function() {
+            toggle.classList.toggle('active');
+            body.classList.toggle('active');
+        }
+    </script>
+
+    <nav>
+        <div class="nav">
+            <ul>
+                <li><a style="text-decoration: none;" href="uts.html">HOME</a></li>
+                <li><a style="text-decoration: none;" href="login.html">LOGIN</a></li>
+                <li><a style="text-decoration: none;" href="other.html">OTHER</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- INI ITU GARIS YANG MEMISAHKAN NAV DAN HEADER -->
+    <hr size="1px">
+
+    <div class="judul1">
+        <h1>MY JEPRETAN</h1>
+    </div>
+
+    <!-- SLIDESHOW PICTURE NIHH -->
+    <div class="headline">  
+        <div class="slideshow-container">  
+            <div class="mySlides fade">  
+                <div class="numbertext">1 / 4</div>  
+                <img src="img1.jpg" style="width:100%">  
+            </div>  
+                <div class="mySlides fade">  
+                <div class="numbertext">2 / 4</div>  
+                <img src="img2.jpg" style="width:100%">  
+            </div>  
+                <div class="mySlides fade">  
+                <div class="numbertext">3 / 4</div>  
+                <img src="img3.jpg" style="width:100%">  
+            </div>  
+                <div class="mySlides fade">  
+                <div class="numbertext">4 / 4</div>  
+                <img src="img4.jpg" style="width:100%">
+            </div>  
+
+            <div>  
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>  
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>  
+            </div>  
+        </div>
+    </div>
+
+    <style>  
+        /* Slideshow container */  
+        .slideshow-container {  
+        width: 800px;  
+        height: 500px;
+        position: relative;  
+        margin: auto;  
+        margin-top: 30px;
+        }  
+        /* Next & previous buttons */  
+        .prev, .next {  
+        cursor: pointer;  
+        position: absolute;  
+        top: 50%;  
+        width: auto;  
+        padding: 16px;  
+        margin-top: -22px;  
+        color: white;  
+        font-weight: bold;  
+        font-size: 18px;  
+        transition: 0.6s ease;  
+        border-radius: 0 3px 3px 0;  
+        }  
+        /* Position the "next button" to the right */  
+        .next {  
+        right: 0;  
+        border-radius: 3px 0 0 3px;  
+        }  
+        /* On hover, add a black background color with a little bit see-through */  
+        .prev:hover, .next:hover {  
+        background-color: rgba(0,0,0,0.8);  
+        }  
+        /* Caption text */  
+        .text {  
+        color: #ffffff;  
+        font-size: 24px;  
+        padding: 8px 50px;  
+        position: absolute;  
+        bottom: 8px;  
+        width: 100%;  
+        text-align: left;  
+        background-color: rgba(0,0,0,0.8);  
+        }  
+        /* Number text (1/4 etc) */  
+        .numbertext {  
+        color: #ffffff;  
+        font-size: 12px;  
+        padding: 8px 12px;  
+        position: absolute;  
+        top: 0;  
+        }  
+        /* The dots/bullets/indicators */  
+        .dot {  
+        cursor:pointer;  
+        height: 100px;  
+        width: 100px;  
+        margin: 0 2px;  
+        background-color: #bbb;  
+        display: inline-block;  
+        transition: background-color 0.6s ease;  
+        }  
+        .active, .dot:hover {  
+        background-color: #ffffff;  
+        }  
+        /* Fading animation */  
+        .fade {  
+        -webkit-animation-name: fade;  
+        -webkit-animation-duration: 2.5s;  
+        animation-name: fade;  
+        animation-duration: 1.5s;  
+        }  
+        @-webkit-keyframes fade {  
+        from {opacity: .4}   
+        to {opacity: 1}  
+        }  
+        @keyframes fade {  
+        from {opacity: .4}   
+        to {opacity: 1}  
+        }  
+    </style>
+
+    <script>  
+        var slideIndex = 1;  
+        showSlides(slideIndex);  
+        function plusSlides(n) {  
+        showSlides(slideIndex += n);  
+        }  
+        function currentSlide(n) {  
+        showSlides(slideIndex = n);  
+        }  
+        function showSlides(n) {  
+        var i;  
+        var slides = document.getElementsByClassName("mySlides");  
+        var dots = document.getElementsByClassName("dot");  
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}  
+        for (i = 0; i < slides.length; i++) {  
+        slides[i].style.display = "none";   
+        }  
+        for (i = 0; i < dots.length; i++) {  
+        dots[i].className = dots[i].className.replace(" active", "");  
+        }  
+        slides[slideIndex-1].style.display = "block";   
+        dots[slideIndex-1].className += " active";  
+        }   
+    </script> 
+
+    <div class="video">
+        <h1>INSTANT VLOG</h1>
+        <video width="640" src="vid1.mp4" controls></video>
+        <video width="640" src="vid2.mp4" controls></video>
+    </div>
+    
+    <div class="judul2">
+        <h1>MOVIE RECOMENDATION</h1>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ANIMATION</th>
+                <th>COMEDY</th>
+                <th>ADVENTURE</th>
+                <th>HORROR</th>
+                <th>THRILLER</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>minions</td>
+                <td>ghostbuster</td>
+                <td>wakanda</td>
+                <td>insidious</td>
+                <td>slr camera</td>
+            </tr>
+            <tr>
+                <td>kungfu panda</td>
+                <td>who am 1</td>
+                <td>black adam</td>
+                <td>annabelle</td>
+                <td>the shallows</td>
+            </tr>
+            <tr>
+                <td>sea beast</td>
+                <td>the roundup</td>
+                <td>hugo</td>
+                <td>conjuring</td>
+                <td>busan train</td>
+            </tr>
+            <tr>
+                <td>baymax</td>
+                <td>eternals</td>
+                <td>home alone</td>
+                <td>the ring</td>
+                <td>it clown</td>
+            </tr>
+            <tr>
+                <td>doraemon</td>
+                <td>mr.go</td>
+                <td>dune</td>
+                <td>ouija</td>
+                <td>chucky</td>
+            </tr>
+        </tbody> 
+    </table>
+    
+    <footer>
+        <div class="medsos">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-google fa-2x"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

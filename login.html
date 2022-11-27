@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="uts.css">
+    <script src="https://kit.fontawesome.com/a1f5576d7f.js" crossorigin="anonymous"></script>
+    <title>Annisa Website</title>
+</head>
+<body bgcolor="#1f1f1f">
+    <div id="toggle">
+        <!-- kita buat class indicator -->
+        <i class="indicator"></i>
+    </div>
+
+    <script>
+        // kita panggil element body dan toggle 
+        const body = document.querySelector('body');
+        const toggle = document.getElementById("toggle");
+
+        // ketika toggle kita klik maka dia akan menambahkan class yang bernama active
+        // yang mana active itu akan kita gunakan di dalam css 
+        toggle.onclick = function() {
+            toggle.classList.toggle('active');
+            body.classList.toggle('active');
+        }
+    </script>
+
+    <nav>
+        <div class="nav">
+            <ul>
+                <li><a style="text-decoration: none;" href="uts.html">HOME</a></li>
+                <li><a style="text-decoration: none;" href="login.html">LOGIN</a></li>
+                <li><a style="text-decoration: none;" href="other.html">OTHER</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <hr size="1px">
+
+    <script>
+        function Login(){ 
+            var user = document.getElementById ("username").value;
+            var pass = document.getElementById ("password").value;
+            
+            if (user=="Annisa Nur Salsabilla" && pass=="1204210123"){
+                alert("Selamat Annisa berhasil login");
+            }else{
+                alert("Mon Maap Anda Bukan Annisa!");
+            }
+        }
+    </script>
+
+    <style>
+        .login{
+        width: 200px;
+        height: 330px;
+        border-radius: 20px;
+        margin: auto;
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        padding: 20px 20px;
+        width: 300px;
+        background-color: #817878b3;
+        box-shadow: 0 0 10px #bba4a446;
+        }
+        .login h1{
+            padding-top: 20px;
+            color: black;
+        }
+        .login, td{
+        text-indent: 20px;
+        padding: 2px 20px;
+        color: #fff;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        }
+        .login form input{
+        width: calc(100% - 20px);
+        padding: 10px 10px;
+        margin-bottom: 10px;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid #554740;
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Times New Roman', Times, serif;
+        text-indent: 40px;
+        }
+        input[type="button"]{
+        padding: 10px 80px;
+        border-radius: 25px;
+        margin: auto 40px;
+        border: none;
+        margin-top: 40px;
+        cursor: pointer;
+        background: #242221;
+        font-weight: bold;
+        color: #fff;
+        font-size: 18px;
+        }
+    </style>
+
+    <div class="login">
+        <center><h1 class="text-h1">Login Account</h1></center>
+        <form>
+            <br>
+            <td>Username</td>
+            <td><input type="text" id="username"></td>
+            <td>Password</td>
+            <td><input type="text" id="password"></td>
+        </form>
+        <input type="button" value="Login" onClick="Login()"></td>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="uts.css">
+    <title>Annisa Website</title>
+</head>
+<body bgcolor="#1f1f1f">
+    <div id="toggle">
+        <!-- kita buat class indicator -->
+        <i class="indicator"></i>
+    </div>
+
+    <script>
+        // kita panggil element body dan toggle 
+        const body = document.querySelector('body');
+        const toggle = document.getElementById("toggle");
+
+        // ketika toggle kita klik maka dia akan menambahkan class yang bernama active
+        // yang mana active itu akan kita gunakan di dalam css 
+        toggle.onclick = function() {
+            toggle.classList.toggle('active');
+            body.classList.toggle('active');
+        }
+    </script>
+
+    <nav>
+        <div class="nav">
+            <ul>
+                <li><a style="text-decoration: none;" href="uts.html">HOME</a></li>
+                <li><a style="text-decoration: none;" href="login.html">LOGIN</a></li>
+                <li><a style="text-decoration: none;" href="other.html">OTHER</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- INI ITU GARIS YANG MEMISAHKAN NAV DAN HEADER -->
+    <hr size="1px">
+
+    <header>
+        <div class="shadow">
+            <h1>welcome to annisa world</h1>
+        </div>
+    </header>
+    
+    <article>
+        <div class="box">
+                <center><h3>RELATIONSHIP</h3></center><br>
+                <P>Istilah 'pacaran islami' sendiri sejatinya tidak benar karena Islam tidak pernah mengajarkan pacaran dan tidak ada landasan pacaran Islami dalam syariat. 
+                    Bahkan sebaliknya, ajaran Islam melarang kegiatan-kegiatan yang ada dalam pacaran, atau singkatnya, Islam melarang pacaran. 'Pacaran' bukanlah istilah yang ada dalam khazanah Islam.
+                    Maka memang tidak ditemukan dalil yang bunyinya “janganlah kalian pacaran” atau “pacaran itu haram” atau semisalnya.<br>
+                    <br>Zina sudah jelas terlarang dalam Islam, Allah Ta'ala berfirman:<br>
+                    <br>“Dan janganlah kamu mendekati zina; sesungguhnya zina itu adalah suatu perbuatan yang keji. Dan suatu jalan yang buruk”</P>   
+        </div>
+
+        <div class="box1">
+                    <center><h3>GRATEFUL</h3></center><br>
+                    <P>Surat Ibrahim ayat 7 berkaitan dengan syukur yang merupakan ungkapan rasa terima kasih seorang hamba kepada Allah SWT yang telah memberikan kenikmatan. 
+                        Jika hambanya tidak bersyukur, maka azab pedih akan menantinya.<br>
+                        <br>ayat 7 Surat Ibrahim yang berbunyi: <br>
+                        <br>"Dan (ingatlah) ketika Tuhanmu memaklumkan, “Sesungguhnya jika kamu bersyukur, niscaya Aku akan menambah (nikmat) kepadamu, 
+                        tetapi jika kamu mengingkari (nikmat-Ku), maka pasti azab-Ku sangat berat”</P>
+        </div>
+
+        <div class="box2">
+                <center><h3>DESTINY</h3></center><br>
+                <P>Semua yang terjadi di dunia ini sudah menjadi ketetapan dari Allah SWT. Takdir atau lebih lengkapnya Qodho dan Qodar memiliki unsur ikatan kesinambungan. 
+                    Qodar berarti ketika Allah telah menetapkan sesuatu akan terjadi pada waktunya dan Qodho adalah tibanya masa ketika ketentuan yang telah ditetapkan terjadi. 
+                    Oleh karenanya, Qodar yakni suatu ketetapan Allah berlaku terhadap segala sesuatu sejak zaman azali serta Qodho adalah pelaksanaan Qodar ketika terjadi.<br>
+                    <br>Rasul SAW berkata:<br>
+                    <br>"Kamu beriman kepada Allah, malaikat-malaikat-Nya, kitab-kitab-Nya, rasul-rasul-Nya dan hari akhir, dan kamu beriman kepada qadar yang baik maupun yang buruk"</p>
+        </div>
+    </article>
+</body>
+</html>

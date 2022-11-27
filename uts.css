@@ -1,0 +1,419 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+/* NAV BAR SETIAP HALAMAN */
+.nav{
+    padding: 40px 10px;
+}
+.nav ul{
+    float: right;
+    padding-right: 60px;
+}
+.nav ul li{
+    display: inline-block;
+    padding-inline-end: 30px;
+}
+.nav ul li a{
+    position: relative;
+    padding: 10px 20px;
+    background: #111;
+    color: #fff;
+    font-size: 10px;
+    height: 40px;
+    width: 80px;
+    border-radius: 50px;
+    border: none;
+    letter-spacing: 1px;
+}
+.nav ul li a:first-child:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+}
+.nav ul li a:last-child:hover{
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+    background-size: 400%;
+}
+.nav ul li a:first-child::before,.nav ul li a:last-child::before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity .5s;
+}
+.nav ul li a:hover:first-child:before,.nav ul li a:hover:last-child::before{
+    opacity: 1;
+    z-index: -1;
+}
+.nav ul li a:hover{
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+@keyframes glow{
+    0% {background-position: 0%;}
+    100% {background-position: 400%;}
+}
+
+
+/* kita buat button DARK/LIGHT MODE dengan memanggil id */
+#toggle {
+    /* position relation agar bisa di pindah - pindahkan */
+    position: relative;
+    top: 30px;
+    left: 40px;
+    float: left;
+    display: block;
+    /*buat button lebarnya*/
+    width: 50px;
+    /*buat panjang nya*/
+    height: 25px;
+    /* border radius bagian ujungnya kita buat melengkung, kalau ga menggunakan border radius nanti nya jadi kotak, kalian bisa coba sendiri ya */
+    border-radius: 160px;
+    /* kita buat background menjadi warna hitam */
+    background: #222;
+    /* transition ketika kita klik dia akan ada delay nya 0.5 s jadi ga langsung cepat gitu gerakan perpindahannya */
+    transition: 0.5s;
+    /* cursor pointer, ketika kita sentuh pointer kita / mouse kita jadi gambar telunjuk  */
+    cursor: pointer;
+    /* bayangan pada box nya kalian bisa otak atik sendiri, ketebelanya, opacitynya kalian bisa ubah - ubah untuk tau cara kerjanya seperti apa */
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+      inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+  
+/* ketika kita klik button nya maka dia akan berubah menjadi warna putih */
+body.active {
+    background: rgb(224, 204, 204);
+}
+/* ketika toggle active kita click maka background pada button akaan berubah berwarna puth */
+#toggle.active {
+    /* button background akan berubah menjadi warna putih */
+    background: rgb(187, 169, 169);
+    /* bayangan pada button akan berubah menjadi abu - abu*/
+    box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
+        inset 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* kita buat bulatan di dalam button tersebut */
+#toggle .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* ukuran lebar dan tinggi */
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to bottom, #444, #222);
+    /* border radius 50% jadi akan berubah menjadi bulat  */
+    border-radius: 50%;
+    transform: scale(0.9);
+    /* bulatan bayangannya atau bisa di bilang pinggirannya  */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+        inset 0 4px 4px rgba(255, 255, 255, 0.2),
+        inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+    /* ketika di klik dia akan delay sedikit */
+    transition: 0.5s;
+}
+
+/* ketika di klik bulatan nya akan berubah menjadi warna putih */
+#toggle.active .indicator {
+    /* ketika kita klik maka bulat nya akan pindah ke kanan itu karena menggunakan left: 160px; / kola gedein ukurannya nanti malah makin menjauh */
+    left: 25px;
+    /*buat backgroundnya */
+    background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+    /* kotak bayangannya*/
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
+        inset 0 4px 4px rgba(255, 255, 255, 1),
+        inset 0 -4px 4px rgba(255, 255, 255, 1);
+}
+
+
+/* HEADER DENGAN TEXT BOX NEON */
+.shadow{
+    position: relative;
+    margin-left: 55px;
+    margin-top: 40px;
+    width: 1245px;
+    height: 300px;
+    background: #3b3a3a;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    line-height: 300px;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+.shadow h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    background: linear-gradient(to right , #03a9f4, #f441a5, #ffeb3b, #00ff95);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.shadow::before,.shadow::after{
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: -3px;
+    /* background: linear-gradient(45deg, #fc0090, #0000ff, #00ff00, #ff0000, #ffff00, #fc0090, #0000ff, #00ff00, #ff0000, #ffff00); */
+    background: linear-gradient(45deg, #89ff00, #010615, #00bcd4, #ff005e, #010615, #fbff00,#772aff, #010615, #2196f3, #ffff00);
+    background-size: 300%;
+    animation: shadow 20s linear infinite;
+    border-radius: 20px;
+}
+.shadow::after{ filter:blur(30px) }
+@keyframes shadow {
+    0% { background-position: 0 0; }
+    50% { background-position: 300%; }
+    100% { background-position: 0 0; }
+}
+
+
+/* CONTENT DAKWAH 3 BOX */
+.box, .box1, .box2{
+    position: relative;
+    padding: 20px;
+    margin-left: 120px;
+    margin-top: 60px;
+    width: 250px;
+    height: 400px;
+    background: #817878b3;
+    color: #fff;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    border-radius: 20px;
+    font-family:'Times New Roman';
+    display: inline-block;
+}
+.box::before, .box::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
+    z-index: -1;
+    border-radius: 20px;
+}
+.box::after{ filter: blur(30px);}
+.box1::before, .box1::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(235deg,  #ff005e, #010615, #fbff00);
+    z-index: -1;
+    border-radius: 20px;
+}
+.box1::after{ filter: blur(30px);}
+.box2::before, .box2::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(235deg, #772aff, #010615, #2196f3);
+    z-index: -1;
+    border-radius: 20px;
+}
+.box2::after{ filter: blur(30px);}
+
+
+/* SLIDES PIC DI OTHER.HTML */
+.slider{
+    position: relative;
+    display: flex;
+    width: 600px;
+    height: 380px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .8);
+}
+.slider img{
+    position: absolute;
+    width: 600px;
+    height: 380px;
+    transition: all .6s;
+}
+#img1 {opacity: 1;}
+#img2 {opacity: 0;}
+#img3 {opacity: 0;}
+.fa{
+    cursor: pointer;
+    position: absolute;
+    color: #e7e7e7;
+    z-index: 1;
+    top: 50%;
+    transform: scale(2.6);
+    transition: .4s;
+}
+.fa:hover{ color: #ffffff; }
+.fa-chevron-left { left: 30px; }
+.fa-chevron-right { right: 30px; }
+.circle{
+    position: absolute;
+    bottom: 10px;
+    width: 15px;
+    height: 15px;
+    border: 2.5px solid white;
+    border-radius: 50%;
+    z-index: 1;
+    transition: .4s;
+}
+#circle1 {
+    left: 46%;
+    background: white;
+}
+#circle2 { left: 50%; }
+#circle3 { left: 54%; }
+
+.judul1 h1{
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 50px;
+    color: silver;
+    width: 1000px;
+    height: 50px;
+    background: #3b3a3a;
+    border-radius: 10px;
+    margin-left: 175px;
+}
+.judul1 h1::before, .judul1 h1::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(235deg, #772aff, #010615, #00bcd4);
+    z-index: -1;
+    border-radius: 20px;
+}
+.box::after{ filter: blur(30px);}
+.judul1 h1{
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 50px;
+    color: silver;
+    width: 1000px;
+    height: 50px;
+    background: #3b3a3a;
+    border-radius: 10px;
+    margin-left: 175px;
+}
+.judul1 h1::before, .judul1 h1::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(235deg, #772aff, #010615, #00bcd4);
+    z-index: -1;
+    border-radius: 20px;
+}
+.judul1 h1::after{ filter: blur(30px);}
+
+.video{
+    position: absolute;
+    margin-left: 30px;
+    /* margin-top: 300px; */
+}
+.video h1{
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    text-align: center;
+    line-height: 50px;
+    color: silver;
+    width: 1000px;
+    height: 50px;
+    background: #3b3a3a;
+    border-radius: 10px;
+    margin-left: 160px;
+}
+.video h1::before, .video h1::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(235deg, #772aff, #010615, #00bcd4);
+    z-index: -1;
+    border-radius: 20px;
+}
+.video h1::after{ filter: blur(30px);}
+
+table{
+    position: absolute;
+    top: 1450px;
+    margin-left: 300px;
+    background: linear-gradient(to right, #800d70, #0c6f7c);
+}
+.judul2 h1{
+    position: relative;
+    margin-top: 650px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 50px;
+    color: silver;
+    width: 1000px;
+    height: 50px;
+    background: #3b3a3a;
+    border-radius: 10px;
+    margin-left: 175px;
+}
+.judul2 h1::before, .judul2 h1::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(235deg, #772aff, #010615, #00bcd4);
+    z-index: -1;
+    border-radius: 20px;
+}
+.judul2 h1::after{ filter: blur(30px);}
+th, td {
+    border: 1px solid #CCCCCC;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+/* FOOTER */
+.medsos{
+    cursor: pointer;
+    width: 1149px;
+    height: 50px;
+    padding: 10px 100px;
+    position: absolute;
+    color: white;
+    background: linear-gradient(to right, #010615, #043036);
+    margin-top: 380px;
+}
+.medsos ul{
+    padding-left: 460px;
+    padding-top: 10px;
+}
+.medsos ul li{
+    display: inline-block;
+    padding-inline-end: 30px;
+}
